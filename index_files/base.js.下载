@@ -1,0 +1,226 @@
+﻿$(function(){
+  //内页分页定位
+  var p_width=$('.pagination').width();
+  $('.pagination').css('left','50%');
+  $('.pagination').css('margin-left','-'+p_width/2+'px');
+    
+  //搜索栏点击按钮
+  var s_type='type1';//初始化搜索类别
+  
+  //搜索栏左侧下拉菜单点击
+  $('.search_now').click(function(){
+    if($(this).is('.downlist')){
+      $(this).removeClass('downlist');
+      $('.search_left ul').slideUp();
+    }else{
+      $(this).addClass('downlist');
+      $('.search_left ul').slideDown();
+    }
+  });
+  
+  //搜索种类选择
+  $('.search_left ul li').click(function(){
+    var li_type=$(this).attr('id');
+    var li_text=$(this).html();
+    $('.search_now').html(li_text);
+    s_type=li_type;
+    $('.search_now').removeClass('downlist');
+      $('.search_left ul').slideUp();
+    if(li_type=='type4'){
+      $('.s_text_input').hide();
+      $('.s_time_input').show();
+      $('.s_text_input input').attr("value","");
+    }else{
+      $('.s_text_input').show();
+      $('.s_time_input').hide();
+      $('.s_time_input input').attr("value","");
+    }
+  });
+  
+  //搜索点击
+  $('.search_btn').click(function(){
+    var tits =document.getElementById("searchtxt").value;
+    var times=$('#s_time').val()==""||$('#e_time').val()=="";
+    if(s_type=='type4'){
+      if (times) {
+      alert("请输入开始与结束时间！")
+      return false;
+      }
+      var time_text=$('#s_time').val()+$('#e_time').val();
+       window.location.href = 'serch-serch?key=' +s_type+ encodeURIComponent(time_text);
+    }else{
+      if (tits.length < 1) {
+      alert("请输入搜索关键字…　")
+      return false;
+      }
+      
+      window.location.href = 'serch-serch?key=' +s_type+ encodeURIComponent(tits);
+    }
+    
+    
+  });
+  //点击关闭弹窗
+	$('.know-btn').click(function(){
+		$('.bv-ml').hide();
+		$('.bv-window').hide();
+	});
+
+	//判断浏览器
+	var ie_bool=(navigator.userAgent.indexOf("MSIE 6.0")>0) || (navigator.userAgent.indexOf("MSIE 5.0")>0);
+	
+  
+if(navigator.userAgent.indexOf("MSIE")>0){   
+     if (ie_bool) {
+		$('.bv-ml').show();
+		$('.bv-window').show();
+	};
+    } 
+  
+  var s_h=$('.shownews_text').height();
+  if(s_h<210){
+    $('.shownews_text').height(210);
+  }
+  
+  layout();
+  
+	/*图片带按钮左右滚动*/
+	var flag = "left";
+	function DY_scroll(wraper,prev,next,img,speed,or){  
+		var wraper = $(wraper); 
+		var prev = $(prev); 
+		var next = $(next); 
+		var img = $(img).find('ul'); 
+		var w = img.find('li').outerWidth(true); 
+		var s = speed; 
+		next.click(function(){ 
+			img.animate({'margin-left':-w}/*,1500,'easeOutBounce'*/,function(){ 
+				img.find('li').eq(0).appendTo(img); 
+				img.css({'margin-left':0}); 
+			}); 
+			flag = "left";
+		}); 
+		prev.click(function(){ 
+			img.find('li:last').prependTo(img); 
+			img.css({'margin-left':-w}); 
+			img.animate({'margin-left':0}/*,1500,'easeOutBounce'*/); 
+			flag = "right";
+		}); 
+		if (or == true){ 
+			ad = setInterval(function() { flag == "left" ? next.click() : prev.click()},s*1000); 
+			wraper.hover(function(){clearInterval(ad);},function(){ad = setInterval(function() {flag == "left" ? next.click() : prev.click()},s*1000);});
+		} 
+	} 
+	DY_scroll('.hl_main5_content','.hl_scrool_leftbtn','.hl_scrool_rightbtn','.hl_main5_content1',2,true);
+
+
+    //横向滚动
+    //$('#scroll-hort').bxCarousel({
+    //    display_num:5,
+    //    move: 1,
+    //    auto: true,
+    //    controls: false,
+    //    margin: 20,
+    //    auto_hover: true,
+    //     auto_interval:1800
+   // });
+  
+    //nav
+    $('.nav li.nav_list_li').hover(function(){
+      $(this).children('.nav_list_li_a').addClass('select');
+      $(this).children('.subnav').stop(true,true).slideDown();
+      
+    },function(){
+       $(this).children('.nav_list_li_a').removeClass('select');
+     $(this).children('.subnav').stop(true,true).slideUp();
+    });
+  
+  //计算时间
+              (function(){
+                var elem =$('#curtime');
+                var getTime = function(){
+                  var date = new Date(),
+                      Year = date.getFullYear(),
+                      Mouth = date.getMonth(),
+                      Day = date.getDate(),
+                      Week = date.getDay();
+                  var weekArr = ['日','一','二','三','四','五','六'];
+                  var str = '今天是：'+Year+'年'+(Mouth+1)+'月'+Day+'日 '+'周'+weekArr[Week];
+                  elem.html(str);
+                };
+                getTime(); 
+              }());
+  //搜索栏打开
+  //$("#search_open").click(function () {
+  //         $("#search_box").toggle(1000)
+  //});
+  
+  
+  //判断是否是手机访问;
+var ua = navigator.userAgent;
+var ipad = ua.match(/(iPad).*OSs([d_]+)/),
+    isIphone = !ipad && ua.match(/(iPhonesOS)s([d_]+)/),
+    isAndroid = ua.match(/(Android)s+([d.]+)/),
+    isMobile = isIphone || isAndroid,
+    isWeiXin = ua.match(/MicroMessenger/);
+if(isMobile || isWeiXin) {
+
+}else{
+
+}
+  
+});
+
+//屏幕高度
+function layout() {
+ var body_width=$(window).width();
+  var body_height=$(window).height();
+  if(body_width<1024){
+    $('body').width(1024);
+    $('.float-box').hide();
+    $('.switchover_btn').show();
+  }else{
+    $('body').width('auto');
+  };
+  $('.main').height(body_height-88);
+  
+}
+
+$(window).resize(function () { layout() });
+
+
+    
+    //加入收藏
+    function addFavorite() {
+      if (document.all) {
+        try {
+          window.external.addFavorite(window.location.href, document.title);
+        } catch (e) {
+          alert("加入收藏失败，请使用Ctrl+D进行添加");
+        }
+        
+      } else if (window.sidebar) {
+        window.sidebar.addPanel(document.title, window.location.href, "");
+      } else {
+        alert("加入收藏失败，请使用Ctrl+D进行添加");
+      }
+    }
+    
+    //设为主页
+    function setHomepage() {
+      if (document.all) {
+        document.body.style.behavior = 'url(#default#homepage)';
+        document.body.setHomePage(window.location.href);
+      } else if (window.sidebar) {
+        if (window.netscape) {
+          try {
+            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+          } catch (e) {
+            alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");
+          }
+        }
+        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+        prefs.setCharPref('browser.startup.homepage', window.location.href);
+      } else {
+        alert('您的浏览器不支持自动自动设置首页, 请使用浏览器菜单手动设置!');
+      }
+    }
