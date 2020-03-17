@@ -2,9 +2,9 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>滑稽之站</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="./index_files/favicon.ico" />
-<link rel="bookmark" href="./index_files/favicon.ico" />
-<link rel="stylesheet" href="./page_files/all.min.css" type="text/css">
+<link rel="shortcut icon" href="../index_files/favicon.ico" />
+<link rel="bookmark" href="../index_files/favicon.ico" />
+<link rel="stylesheet" href="../page_files/all.min.css" type="text/css">
 </head>
 
 <body>
@@ -12,10 +12,10 @@
 	<div class="container">
 		<nav class="" role="navigation">
 			<ul class="nav navbar-nav">
-				<li> <img class="logo" src="./index_files/logo33.png"> </li>
-				<li> <a href="./index.html">首页</a> </li>
-				<li> <a href="./page1.html">走进滑稽</a> </li>
-				<li> <a href="./page2.html">滑稽日志</a> </li>
+				<li> <img class="logo" src="../index_files/logo33.png"> </li>
+				<li> <a href="../index.html">首页</a> </li>
+				<li> <a href="../page1.html">走进滑稽</a> </li>
+				<li> <a href="../page2.html">滑稽日志</a> </li>
 				<li> <a href="https://www.popiask.cn/j87hOo">反馈意见</a> </li>
 				<li> <a href="http://114.55.35.1" target="_blank">littleye</a> </li>
 			</ul>
@@ -35,12 +35,14 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row block src-list" id="list">
-				<h1>个人日志</h1>
+				<h1>　　　　　输入密码来访问文件</h1>
 				<dl class="dl-horizontal">
-					<dt><a href="./articles/20200317.html">测试密码输入</a></dt>
-					<dd>仅用来测试</dd>
-					<dt><a href="./articles/20200315.txt">第一个页面</a></dt>
-					<dd>仅用来测试</dd>
+					<dd>
+					<form>
+					<input type="password" id="psw">
+					<button type="button" onclick="myFunction()">提交</button>
+					</form> 
+					</dd>
 				</dl>
 			</div>
 		</div>
@@ -51,5 +53,21 @@
 		<p> <small><a href="https://huohuoxi.cc">滑稽之站</a></small></p>
 	</div>
 </div>
+
+<script src="../page_files/md5.min.js"></script>
+<script>
+function myFunction() {
+  var x, text;
+
+  x = md5(document.getElementById("psw").value);
+
+
+  if (x=="aefe00688208a957702b6919dbe79e08") {
+    alert("你输入了正确的密码！")
+  } else {
+    alert("你输入的密码好像是错误的？")
+  }
+}
+</script>
 
 </body></html>
