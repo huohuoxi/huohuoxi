@@ -43,6 +43,8 @@
 					<button type="button" onclick="myFunction()">提交</button>
 					</form> 
 					</dd>
+					<dd id="test1"></dd>
+					<dd>这是暑假前的最后一次更新。</dd>
 				</dl>
 			</div>
 		</div>
@@ -55,19 +57,30 @@
 </div>
 
 <script src="../page_files/md5.min.js"></script>
+<script src="../page_files/core-min.js"></script>
+<script src="../page_files/aes.js"></script>
 <script>
 function myFunction() {
-  var x, text;
+  var x,y;
 
-  x = md5(document.getElementById("psw").value);
-
+  y = document.getElementById("psw").value;
+  x = md5(y);
 
   if (x=="aefe00688208a957702b6919dbe79e08") {
-    alert("你输入了正确的密码！")
+	var result=CryptoJS.AES.decrypt("U2FsdGVkX19mSH18nstV7ycfK4k+unBSuKpobOL8cE/UJgwPWXXCYazlaO9dbZL+aAc9oEeYs2inDM/kFyCOA8mCtTX1f2BL5k0IW4BRXIk=",y).toString(CryptoJS.enc.Utf8);
+    document.getElementById("test1").innerHTML = result;
+
   } else {
-    alert("你输入的密码好像是错误的？")
+    alert("你好像输入了错误的密码？")
   }
 }
 </script>
-
+<!-- 
+  var pwd="我的密码";
+  var mi=CryptoJS.AES.encrypt("你好，这是一个AES加密测试",pwd);
+  alert("你好，这是一个AES加密测试----密文:"+mi);
+ 
+  var result=CryptoJS.AES.decrypt(mi,pwd).toString(CryptoJS.enc.Utf8);
+  alert("解密结果："+result);
+-->
 </body></html>
