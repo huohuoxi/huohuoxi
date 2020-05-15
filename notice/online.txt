@@ -1,34 +1,5 @@
-8
+7
 5
-9
-22765925
-砕月
-http://p2.music.126.net/F_uagwWsPXs3JXSymunFUQ==/804842511556161.jpg
-5
-10
-1299985463
-いかないで -piano ver.- (instrumental)
-https://p2.music.126.net/-e39D0OGRNkg6LBDG7msSQ==/109951163447625114.jpg
-5
-11
-445664306
-鳥の詩 (Piano Ver.)
-https://p2.music.126.net/CI_u3SfBgdTIAQtFnn_wnQ==/6040716883009850.jpg
-5
-12
-26537205
-天狗舞踏会
-https://p1.music.126.net/1BlUqB4K5IjoS8G4VnP90g==/2379343162570657.jpg
-5
-13
-28411784
-夏祭り、夢花火。
-https://p2.music.126.net/Ci18FchnB6Z7I4ybjVpALw==/6007731534416117.jpg
-5
-14
-1326596082
-青春ブタ野郎
-https://p2.music.126.net/P0fk1c9Q6P1znFw6JclehQ==/109951163674951144.jpg
 5
 15
 874229
@@ -36,7 +7,37 @@ https://p2.music.126.net/P0fk1c9Q6P1znFw6JclehQ==/109951163674951144.jpg
 https://p2.music.126.net/8tnNl2t-1Wsvcqn9-2XjNA==/638816255750132.jpg
 5
 16
-1299985463
-いかないで -piano ver.- (instrumental)
-https://p2.music.126.net/-e39D0OGRNkg6LBDG7msSQ==/109951163447625114.jpg
+565712
+フタリ
+https://p2.music.126.net/rztq31dCoro7np3prjjfjw==/5986840813604883.jpg
+5
+17
+565712
+フタリ
+https://p1.music.126.net/rztq31dCoro7np3prjjfjw==/5986840813604883.jpg
+5
+18
+767452
+三年幻想郷
+https://p1.music.126.net/QdxRMFtZCNkTsvJtNfpHpg==/565148976688829.jpg
+5
+19
+586299
+風の住む街
+https://p1.music.126.net/ap7KvRE0-V4kfThDVVor9A==/18777459579736085.jpg
+5
+20
+511369
+春よ、来い
+https://p1.music.126.net/DWZH0eov-uLttdjzpNB26w==/6050612487861686.jpg
+5
+21
+22706980
+渚
+https://p1.music.126.net/PtLd62-khEg8iCutTdE5Vg==/109951163286813093.jpg
+5
+22
+28253999
+勿念他归（千本樱 钢琴版伴奏）
+https://p1.music.126.net/W-VPO3dAwrWC6zDJA-Mvhg==/109951163828304685.jpg
 Powered by Python
