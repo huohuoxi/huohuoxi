@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>滑稽之站</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="../index_files/favicon.ico" />
+<link rel="bookmark" href="../index_files/favicon.ico" />
+<link rel="stylesheet" href="../page_files/all.min.css" type="text/css">
+</head>
+
+<body>
+<header class="navbar" role="banner">
+	<div class="container">
+		<nav class="" role="navigation">
+			<ul class="nav navbar-nav">
+				<li> <img class="logo" src="../index_files/logo33.png"> </li>
+				<li> <a href="../index.html">首页</a> </li>				
+				<li> <a href="../oindex.html">原主站</a> </li>
+				<li> <a href="../page2.html">日志</a> </li>
+				<li> <a href="../page1.html">关于</a> </li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div class="zju-mirrors-header">
+	<div class="container">
+		<h1>滑稽之站</h1>
+		<p>滑天下大稽，</p>
+		<p>做未来滑稽。</p>
+	</div>
+</div>
+
+<div class="container zju-mirrors-body">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row block src-list" id="list">
+				<h1>　　　　　输入密码来访问文件</h1>
+				<dl class="dl-horizontal">
+					<dd>
+					<form>
+					<input type="password" id="psw">
+					<button type="button" onclick="myFunction()">提交</button>
+					</form> 
+					</dd>
+					<dd id="test1"></dd>
+					<dd>密码提示：姓名首字母2遍</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="zju-mirrors-footer">
+	<div class="container">
+		<p> <small><a href="https://huohuoxi.cc">滑稽之站</a></small></p>
+	</div>
+</div>
+
+<script src="../page_files/md5.min.js"></script>
+<script src="../page_files/core-min.js"></script>
+<script src="../page_files/aes.js"></script>
+<script>
+function myFunction() {
+  var x,y,z;
+
+  y = document.getElementById("psw").value;
+  z = y + y + y + y + y + y;
+  x = md5(z);
+  if (x=="7a59fa3ab8647a015b64dffab8f6f030") {
+	var result=CryptoJS.AES.decrypt("U2FsdGVkX1/LL8qm/5D5C/vuZJO1C55F9eeo8fa6W8Hp7ONSMzXqPjKIIV0vB4lzOM7ppWMulnoIEYR9H9hyMrsg3jeBqH4I3oX/LtGktLUdtVg0Kk6UauBCoyVEX2P9G3zhf/WAiWTdjF78cw5t5g==",z).toString(CryptoJS.enc.Utf8);
+    document.getElementById("test1").innerHTML = result;
+
+  } else {
+    alert("你好像输入了错误的密码？")
+  }
+}
+</script>
+<!-- 
+  var pwd="我的密码";
+  var mi=CryptoJS.AES.encrypt("你好，这是一个AES加密测试",pwd);
+  alert("你好，这是一个AES加密测试----密文:"+mi);
+ 
+  var result=CryptoJS.AES.decrypt(mi,pwd).toString(CryptoJS.enc.Utf8);
+  alert("解密结果："+result);
+-->
+</body></html>
